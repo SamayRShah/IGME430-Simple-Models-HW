@@ -328,7 +328,7 @@ const findAndAgeDog = async (req, res) => {
   let doc = {};
   try {
     doc = await Dog.findOneAndUpdate(
-      { name: req.query.name },
+      { name: req.body.name },
       { $inc: { age: 1 } },
       { new: true },
     ).exec();
